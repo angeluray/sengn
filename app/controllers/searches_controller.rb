@@ -1,9 +1,10 @@
 class SearchesController < ApplicationController
-  before_action :set_search, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /searches or /searches.json
   def index
-    @searches = Search.all
+    render
+    # @searches = Search.all
   end
 
   # GET /searches/1 or /searches/1.json
